@@ -9,5 +9,5 @@ create-cluster:
     kind create cluster --name lgtm-cluster
 
 # Destory the Kind cluster  
-cluster-destroy:
+destroy-cluster:
     kind delete cluster --name lgtm-cluster
