@@ -10,6 +10,13 @@ cluster-create:
     sleep 10
     kubectl get nodes
 
-# Destory the Kind cluster  
+# Destroy the Kind cluster  
 cluster-destroy:
     kind delete cluster --name homelab-cluster
+
+# Get Grafana admin credentials
+grafana-credentials:
+    @echo "Grafana admin username:"
+    @kubectl -n monitoring get secret prometheus-grafana -o jsonpath='{.data.admin-user}' | base64 --decode
+    @echo "\nGrafana admin password:"
+    @kubectl -n monitoring get secret prometheus-grafana -o jsonpath='{.data.admin-password}' | base64 --decode

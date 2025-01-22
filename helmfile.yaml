@@ -2,11 +2,16 @@ repositories:
 - name: prometheus-community
   url: https://prometheus-community.github.io/helm-charts
 
-
 releases:
 - name: prometheus
   namespace: monitoring
-  chart: prometheus-community/prometheus
+  chart: prometheus-community/kube-prometheus-stack
   set:
-  - name: rbac.create
+  - name: disableValidationOnInstall
+    value: true
+  - name: grafana.service.type
+    value: NodePort
+  - name: grafana.service.nodePort
+    value: 30030
+  - name: alertmanager.enabled
     value: false
