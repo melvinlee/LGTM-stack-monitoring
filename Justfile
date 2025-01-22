@@ -5,9 +5,11 @@ default:
     @just --list
 
 # Create a new Kind cluster
-create-cluster:
-    kind create cluster --name lgtm-cluster
+cluster-create:
+    kind create cluster --name homelab-cluster --config kind-cluster.yaml
+    sleep 10
+    kubectl get nodes
 
 # Destory the Kind cluster  
-destroy-cluster:
-    kind delete cluster --name lgtm-cluster
+cluster-destroy:
+    kind delete cluster --name homelab-cluster
