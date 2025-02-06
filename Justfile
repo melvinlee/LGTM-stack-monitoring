@@ -6,7 +6,7 @@ default:
 
 # Create a new Kind cluster
 cluster-create:
-    kind create cluster --name homelab-cluster --config kind-cluster.yaml
+    kind create cluster --name homelab-cluster --config cluster/kind-cluster.yaml
     sleep 10
     kubectl get nodes
 
