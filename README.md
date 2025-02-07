@@ -15,7 +15,6 @@ To create a new Kind cluster using the `Justfile`, run the following command:
 just cluster-create
 ```
 
-How to Destroy the Cluster
 To destroy the Kind cluster, run the following command:
 
 ```sh

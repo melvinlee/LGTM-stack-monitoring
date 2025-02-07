@@ -6,12 +6,5 @@ releases:
 - name: prometheus
   namespace: monitoring
   chart: prometheus-community/kube-prometheus-stack
-  set:
-  - name: disableValidationOnInstall
-    value: true
-  - name: grafana.service.type
-    value: NodePort
-  - name: grafana.service.nodePort
-    value: 30030
-  - name: alertmanager.enabled
-    value: false
+  values:
+  - ../values/prometheus-override.yaml
