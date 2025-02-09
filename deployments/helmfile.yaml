@@ -6,5 +6,8 @@ releases:
 - name: prometheus
   namespace: monitoring
   chart: prometheus-community/kube-prometheus-stack
+  createNamespace: true
+  atomic: true  # Ensure rollback on failed deployment
   values:
-  - ../values/prometheus-override.yaml
+    - ../values/prometheus-override.yaml
+  

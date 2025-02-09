@@ -1,8 +1,8 @@
 
 grafana:
   service:
-    # type: NodePort
-    # nodePort: 30030
+    type: NodePort
+    nodePort: 30030
 
 alertmanager:
   enabled: false
